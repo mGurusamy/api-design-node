@@ -4,10 +4,12 @@
 
 var jsonData = {count: 12, message: 'hey'};
 var express = require('express');
+var path = require('path');
 var app = express();
 var port = process.env.PORT || 3000;
+
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html'), function(err){
+    res.sendFile(path.join(__dirname, 'index.html')), function(err){
         if(err){
             res.status(500).send(err);
         }
